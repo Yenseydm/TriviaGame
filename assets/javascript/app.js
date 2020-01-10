@@ -1,7 +1,7 @@
 
 var triviaQuestions = [
 	{
-		question: "what are the Koopalings from Super Mario games named after?",
+		question: "What are the Koopalings from Super Mario games named after?",
 		answers: {
 			a: 'famous musicians',
 			b: 'famous painters',
@@ -74,14 +74,27 @@ var triviaQuestions = [
 	},
 ];
 
-var timer = 10;
 
-// var downloadTimer = setInterval(function(){
-//   document.getElementById("timer").innerHTML = timer;
-//   timer -= 1;
-//   if(timer <= 0){
-//     timer = 10;
-//     clearInterval(downloadTimer);
-//   }
-// }, 1000);
+$('.start').on('click', function(){
 
+	var timer = 30;
+	
+	var downloadTimer = setInterval(function(){
+		  document.getElementById("timer").innerHTML = timer;
+		  timer -= 1;
+		  if(timer <= 0){
+			timer = 30;
+			clearInterval(downloadTimer);
+		  }
+		}, 1000);
+});
+
+	
+	function triviaGame() {
+
+		triviaGame = triviaQuestions;
+
+		
+	}
+	
+	console.log(triviaGame);

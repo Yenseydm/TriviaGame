@@ -1,13 +1,3 @@
-var timer = 10;
-
-// var downloadTimer = setInterval(function(){
-//   document.getElementById("timer").innerHTML = timer;
-//   timer -= 1;
-//   if(timer <= 0){
-//     timer = 10;
-//     clearInterval(downloadTimer);
-//   }
-// }, 1000);
 
 var triviaQuestions = [
 	{
@@ -27,8 +17,8 @@ var triviaQuestions = [
 			c: 'Tetris'
 		},
 		correctAnswer: 'c'
-    },
-    {
+	},
+	{
 		question: "what was Sonic the hedgehog originally called?",
 		answers: {
 			a: 'Sonic the animal',
@@ -36,8 +26,8 @@ var triviaQuestions = [
 			c: 'Syngin'
 		},
 		correctAnswer: 'b'
-    },
-    {
+	},
+	{
 		question: "The entire GoldenEye 007 game on the N64 is how big?",
 		answers: {
 			a: '1 TB',
@@ -45,8 +35,8 @@ var triviaQuestions = [
 			c: '12 MB'
 		},
 		correctAnswer: 'c'
-    },
-    {
+	},
+	{
 		question: "The average age of a U.S. gamer is?",
 		answers: {
 			a: '17',
@@ -54,8 +44,8 @@ var triviaQuestions = [
 			c: '22'
 		},
 		correctAnswer: 'b'
-    },
-    {
+	},
+	{
 		question: "What is Bowser called in Japan?",
 		answers: {
 			a: 'King Koopa',
@@ -63,8 +53,8 @@ var triviaQuestions = [
 			c: 'Shinrin-yoku'
 		},
 		correctAnswer: 'a'
-    },
-    {
+	},
+	{
 		question: "<i>The New York Time</i> incorrectly described Mario and Luigi as?",
 		answers: {
 			a: 'janitor',
@@ -72,8 +62,8 @@ var triviaQuestions = [
 			c: 'farmers'
 		},
 		correctAnswer: 'a'
-    },
-    {
+	},
+	{
 		question: "The creator of Pac-Man got the idea of the game while eating what food?",
 		answers: {
 			a: 'burger',
@@ -83,3 +73,15 @@ var triviaQuestions = [
 		correctAnswer: 'c'
 	},
 ];
+
+var timer = 10;
+
+// var downloadTimer = setInterval(function(){
+//   document.getElementById("timer").innerHTML = timer;
+//   timer -= 1;
+//   if(timer <= 0){
+//     timer = 10;
+//     clearInterval(downloadTimer);
+//   }
+// }, 1000);
+

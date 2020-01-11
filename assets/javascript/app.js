@@ -1,100 +1,94 @@
-
+$(document).ready(function () {
 var triviaQuestions = [
 	{
 		question: "What are the Koopalings from Super Mario games named after?",
-		answers: {
-			a: 'famous musicians',
-			b: 'famous painters',
-			c: 'famous architects'
-		},
-		correctAnswer: 'a'
+		choices: ["famous musicians", "famous painters", "famous architects"],
+		correctAnswer: 0,
+		image: "assets/images/koopalings.gif"
 	},
 	{
 		question: "What was the first game played in space?",
-		answers: {
-			a: 'PAC-MAN',
-			b: 'Space Warrior',
-			c: 'Tetris'
-		},
-		correctAnswer: 'c'
+		choices: ["Pac-Man", "Space Warrior", "Tetris"],
+		correctAnswer: 2,
+		image: "assets/images/tetris.gif"
 	},
 	{
 		question: "what was Sonic the hedgehog originally called?",
-		answers: {
-			a: 'Sonic the animal',
-			b: 'Mr. Needlemouse',
-			c: 'Syngin'
-		},
-		correctAnswer: 'b'
+		choices: ["Sonic the Animal", "Mr. Needlemouse", "Syngin the Snake"],
+		correctAnswer: 1,
+		image: "assets/images/sonic.gif"
 	},
 	{
 		question: "The entire GoldenEye 007 game on the N64 is how big?",
-		answers: {
-			a: '1 TB',
-			b: '15 GB',
-			c: '12 MB'
-		},
-		correctAnswer: 'c'
+		choices: [" 1 TB", "15 GB", "12 MB"],
+		correctAnswer: 2,
+		image: "assts/images/sonic.gif"
 	},
 	{
 		question: "The average age of a U.S. gamer is?",
-		answers: {
-			a: '17',
-			b: '35',
-			c: '22'
-		},
-		correctAnswer: 'b'
+		choices: ["17", "35", "22"],
+		correctAnswer: 1,
+		image: ""
 	},
 	{
 		question: "What is Bowser called in Japan?",
-		answers: {
-			a: 'King Koopa',
-			b: 'Akako',
-			c: 'Shinrin-yoku'
-		},
-		correctAnswer: 'a'
+		choices: ["King Koopa", "Akako", "Shinrin-yoku"],
+		correctAnswer: 0,
+		image: ""
 	},
 	{
 		question: "<i>The New York Time</i> incorrectly described Mario and Luigi as?",
-		answers: {
-			a: 'janitor',
-			b: 'firemen',
-			c: 'farmers'
-		},
-		correctAnswer: 'a'
+		choices: ["janitor", "firemen", "farmers"],
+		correctAnswer: 0,
+		image: ""
 	},
 	{
 		question: "The creator of Pac-Man got the idea of the game while eating what food?",
-		answers: {
-			a: 'burger',
-			b: 'sushi',
-			c: 'pizza'
-		},
-		correctAnswer: 'c'
+		choices: ["burger", "sushi", "pizza"],
+		correctAnswer: 2,
+		image: ""
 	},
 ];
 
+var userChoice;
 
-$('.start').on('click', function(){
+var correctAnswer = 0;
 
-	var timer = 30;
-	
-	var downloadTimer = setInterval(function(){
-		  document.getElementById("timer").innerHTML = timer;
-		  timer -= 1;
-		  if(timer <= 0){
-			timer = 30;
-			clearInterval(downloadTimer);
-		  }
-		}, 1000);
+var wrongAnswer = 0;
+
+var notAnswered = 0;
+
+var timer = 30;
+
+
+$('.start').click(function() {
+ 
+	$('.start').hide();
+	counter = setInterval(timer, 1000);
+	displayQuestions()
+
 });
 
-	
-	function triviaGame() {
 
-		triviaGame = triviaQuestions;
+function displayQuestions(){
+	for (var i = 0; i < triviaQuestions.length; i++){
 
-		
-	}
-	
-	console.log(triviaGame);
+		$("#questions").text(JSON.stringify(triviaQuestions[0].question));
+ 
+		 $("#questions").append(JSON.stringify(triviaQuestions[0].choices));
+ 
+	 }
+}
+
+
+
+
+$('.startOver').hide();
+$('.startOver').click(function() {
+  
+});
+
+
+
+
+}

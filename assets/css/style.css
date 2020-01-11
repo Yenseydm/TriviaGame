@@ -41,12 +41,8 @@ h1 {
 
 .questionBox{
     background-color: rgb(184, 255, 255, 0.5);
-    height: 600px;
     width: 60%;
     text-align: center;
-    /* margin: 270px;
-    margin-top: 30px;
-    margin-bottom: 50px; */
     margin-right: 150px;
     margin-bottom: 100px;
     float: right;
@@ -62,4 +58,27 @@ h1 {
     width: 250px;
     text-align: center;
     float: left;
+}
+
+button {
+
+    width: 400px;
+    height: 150px;
+    margin: 50px;
+    border-radius: 25px;
+    box-shadow: rgb(133, 255, 239) 1px 0 10px;
+    
+}
+
+#startButton {
+    font-size: 50px;
+    font-family: 'Press Start 2P', cursive;
+
+}
+
+#questions {
+    margin: 50px;
+    font-size: 30px;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
 }

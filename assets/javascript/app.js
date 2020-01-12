@@ -89,7 +89,7 @@ function decrement() {
 	if (timer === 0){
 		notAnswered++;
 		stop();
-		$("#answer").text("OOOoo better luck next time! The answer is: " + pick.choice[pick.correctAnswer] )
+		$("#answer").html("OOOoo better luck next time! The answer is: " + pick.choice[pick.correctAnswer] )
 		picture();
 	}
 };
@@ -103,21 +103,21 @@ function displayQuestions(){
 	random = Math.floor(Math.random()*triviaQuestions.length);
 	pick = triviaQuestions[random];
 
-	$("#questions").html("<p>" + pick.question + "</p>")
+	$("#questions").html(pick.question)
 	for (var i = 0; i < pick.choice.length; i++){
 		var choice = $("<div>");
-		choice.addClass("answerChoice");
+		choice.addClass("answerChoices");
 		choice.html(pick.choice[i]);
 
-		choice.attr("data-guessvalue", i);
+		choice.attr("data-guessval", i);
 		$("#answer").append(choice);
 		
 	 }
 };
 
-$(".answerChoice").on("click", function () {
+$(".answerChoices").on("click", function () {
 
-	userChoice = parseInt($(this).attr("data-guessvalue"));
+	userChoice = parseInt($(this).attr("data-guessval"));
 
 	if (userChoice === pick.correctAnswer){
 		stop();
@@ -127,7 +127,6 @@ $(".answerChoice").on("click", function () {
 		picture();
 
 	} else {
-
 		stop();
 		wrongAnswer++;
 		userChoice="";
@@ -143,7 +142,9 @@ function picture(){
 	newArrau.push(pick);
 	triviaQuestions.splice(random, 1);
 
+
 	var hideImage = setTimeout(function(){
+		$("#answer").empty();
 		$("#image").empty();
 		timer=15;
 

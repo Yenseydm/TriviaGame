@@ -119,11 +119,11 @@ $(".answerChoice").on("click", function () {
 
 	userChoice = parseInt($(this).attr("data-guessvalue"));
 
-	if (userChoice === pick.answer){
+	if (userChoice === pick.correctAnswer){
 		stop();
 		correctAnswer++;
 		userChoice="";
-		$("#answer").html("<p>CORRECT!</p>");
+		$("#answer").html("CORRECT!");
 		picture();
 
 	} else {
@@ -131,7 +131,7 @@ $(".answerChoice").on("click", function () {
 		stop();
 		wrongAnswer++;
 		userChoice="";
-		$("#answer").html("<p> OOOOh try again!" + pick.choice[pick.answer] + "</p>");
+		$("#answer").html("OOOO TRY AGAIN!" + pick.choice[pick.answer]);
 		picture();
 	}
 
@@ -139,20 +139,20 @@ $(".answerChoice").on("click", function () {
 
 function picture(){
 
-	$("#answer").append("<img src=" + pick.photo + ">");
+	$("#image").append("<img src=" + pick.image + ">");
 	newArrau.push(pick);
 	triviaQuestions.splice(random, 1);
 
 	var hideImage = setTimeout(function(){
-		$("#answer").empty();
+		$("#image").empty();
 		timer=15;
 
 	if((wrongAnswer + correctAnswer + notAnswered) === totalQuestion){
 		$("#questions").empty();
-		$("#questions").html("<p> GAME OVER <br> Your Results: </p>");
-		$("#answer").append("<p> Correct " + correctAnswer + "</p>");
-		$("#answer").append("<p> Incorrect: " + wrongAnswer+ "</p>");
-		$("#answer").append("<p> Unanswered: " + notAnswered + "</p>");
+		$("#questions").html("GAME OVER  Your Results: ");
+		$("#answer").append("Correct " + correctAnswer);
+		$("#answer").append("Incorrect: " + wrongAnswer);
+		$("#answer").append("Unanswered: " + notAnswered);
 		$("#reset").show();
 		correctAnswer = 0;
 		wrongAnswer = 0;
